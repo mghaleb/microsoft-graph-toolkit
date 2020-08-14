@@ -1,7 +1,7 @@
-import { MsalProvider, MsalConfig } from '../../src/providers/MsalProvider';
-import { LoginType } from '../../src/providers/IProvider';
+import { LoginType } from '@microsoft/mgt-element';
 import { AuthenticationProviderOptions } from '@microsoft/microsoft-graph-client/lib/es/IAuthenticationProviderOptions';
 import { UserAgentApplication } from 'msal';
+import { MsalConfig, MsalProvider } from '../../src/providers/MsalProvider';
 
 jest.mock('@microsoft/microsoft-graph-client/lib/es/Client');
 jest.mock('msal/lib-commonjs');
@@ -112,7 +112,7 @@ describe('MSALProvider', () => {
     };
 
     UserAgentApplication.prototype.loginRedirect = jest.fn().mockImplementationOnce(() => {
-      //msalProvider.tokenReceivedCallback(undefined);
+      // msalProvider.tokenReceivedCallback(undefined);
     });
 
     const msalProvider = new MsalProvider(config);

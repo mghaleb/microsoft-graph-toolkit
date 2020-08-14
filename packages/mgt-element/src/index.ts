@@ -5,5 +5,8 @@
  * -------------------------------------------------------------------------------------------
  */
 
+export * from './providers/IProvider';
+export * from './providers/Providers';
+export * from './utils/EventDispatcher';
 export * from './IBatch';
 export * from './IGraph';

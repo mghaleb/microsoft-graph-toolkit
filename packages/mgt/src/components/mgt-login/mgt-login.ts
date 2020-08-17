@@ -22,7 +22,7 @@ import { PersonViewType } from '../mgt-person/mgt-person';
  *
  * @export
  * @class MgtLogin
- * @extends {MgtBaseComponent}
+ * @extends {MgtTemplateComponent}
  *
  * @fires loginInitiated - Fired when login is initiated by the user
  * @fires loginCompleted - Fired when login completes

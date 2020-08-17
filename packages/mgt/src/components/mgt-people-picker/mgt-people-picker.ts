@@ -365,7 +365,7 @@ export class MgtPeoplePicker extends MgtTemplatedComponent {
    * Use reload instead of load to ensure loading events are fired.
    *
    * @protected
-   * @memberof MgtBaseComponent
+   * @memberof MgtTemplatedComponent
    */
   protected requestStateUpdate(force?: boolean) {
     if (force) {

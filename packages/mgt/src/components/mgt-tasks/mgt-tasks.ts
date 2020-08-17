@@ -126,7 +126,7 @@ const plannerAssignment = {
  *
  * @export
  * @class MgtTasks
- * @extends {MgtBaseComponent}
+ * @extends {MgtTemplatedComponent}
  *
  * @fires taskAdded - Fires when a new task has been created.
  * @fires taskChanged - Fires when task metadata has been changed, such as marking completed.

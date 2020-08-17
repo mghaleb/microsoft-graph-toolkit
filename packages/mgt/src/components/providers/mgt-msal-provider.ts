@@ -9,6 +9,7 @@ import { customElement, property } from 'lit-element';
 import { Providers, LoginType } from '@microsoft/mgt-element';
 import { MsalConfig, MsalProvider } from '../../providers/MsalProvider';
 import { MgtBaseProvider } from './baseProvider';
+
 /**
  * Authentication Library Provider for Microsoft personal accounts
  *

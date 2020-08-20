@@ -25,4 +25,4 @@ export * from './mgt-person/mgt-person';
 export * from './mgt-tasks/mgt-tasks';
 export * from './mgt-teams-channel-picker/mgt-teams-channel-picker';
 
-export { ComponentMediaQuery } from './baseComponent';
+// export { ComponentMediaQuery } from './baseComponent';

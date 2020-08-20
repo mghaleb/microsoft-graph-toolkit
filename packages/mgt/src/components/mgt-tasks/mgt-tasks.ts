@@ -19,7 +19,7 @@ import { styles } from './mgt-tasks-css';
 import { ITask, ITaskFolder, ITaskGroup, ITaskSource, PlannerTaskSource, TodoTaskSource } from './task-sources';
 
 import { getMe } from '../../graph/graph.user';
-import { ComponentMediaQuery } from '../baseComponent';
+import { ComponentMediaQuery } from '@microsoft/mgt-element';
 import { MgtPeople } from '../mgt-people/mgt-people';
 import '../mgt-person/mgt-person';
 import '../sub-components/mgt-arrow-options/mgt-arrow-options';

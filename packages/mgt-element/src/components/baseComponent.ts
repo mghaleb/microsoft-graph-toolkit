@@ -6,7 +6,7 @@
  */
 
 import { LitElement, PropertyValues } from 'lit-element';
-import { Providers } from '@microsoft/mgt-element';
+import { Providers } from '../providers/Providers';
 
 /**
  * Defines media query based on component width
@@ -28,7 +28,7 @@ export enum ComponentMediaQuery {
   /**
    * devices with width > 1200
    */
-  desktop = 'desktop'
+  desktop = 'desktop',
 }
 
 /**
@@ -164,7 +164,7 @@ export abstract class MgtBaseComponent extends LitElement {
     const event = new CustomEvent(eventName, {
       bubbles: false,
       cancelable: true,
-      detail
+      detail,
     });
     return this.dispatchEvent(event);
   }
@@ -193,7 +193,7 @@ export abstract class MgtBaseComponent extends LitElement {
     super.updated(changedProperties);
     const event = new CustomEvent('updated', {
       bubbles: true,
-      cancelable: true
+      cancelable: true,
     });
     this.dispatchEvent(event);
   }

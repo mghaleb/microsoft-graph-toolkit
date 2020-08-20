@@ -10,18 +10,19 @@
     "src"
   ],
   "scripts": {
-    "build": "npm-run-all clean build:esm",
-    "build:esm": "tsc",
-    "clean": "shx rm -rf dist",
-    "lint": "tslint -c ../../config/tslint.json 'src/**/*.ts'",
+    "build": "npm-run-all clean lint build:tsc",
+    "build:tsc": "tsc -b",
+    "build:watch": "tsc -w",
+    "clean": "shx rm -rf ./dist && shx rm -rf ./tsconfig.tsbuildinfo",
+    "lint": "tslint -c ../../tslint.json 'src/**/*.ts'",
     "prepack": "shx rm -rf *.tgz && npm run build",
-    "postpack": "cpx *.tgz ../../artifacts",
-    "watch": "tsc --watch"
+    "postpack": "cpx *.tgz ../../artifacts"
   },
   "author": "Microsoft",
   "license": "MIT",
   "dependencies": {
-    "@microsoft/microsoft-graph-client": "^2.0.0"
+    "@microsoft/microsoft-graph-client": "^2.0.0",
+    "lit-element": "^2.3.1"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",

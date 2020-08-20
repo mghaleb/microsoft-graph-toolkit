@@ -25,13 +25,14 @@
     "src"
   ],
   "scripts": {
-    "build": "npm-run-all setVersion clean build:esm build:bundle",
+    "compile": "npm run sass && tsc -b tsconfig.build.json",
+    "build": "npm-run-all setVersion clean compile build:bundle",
     "build:esm": "npm-run-all sass tsc",
     "build:bundle": "npm-run-all copy:loader copy:wc sass rollup",
-    "clean": "shx rm -rf dist",
+    "clean": "shx rm -rf dist && shx rm -rf tsconfig.build.tsbuildinfo",
     "copy:loader": "cpx src/bundle/mgt-loader.js dist/bundle",
     "copy:wc": "cpx node_modules/@webcomponents/webcomponentsjs/bundles/**/* dist/bundle/wc/bundles && cpx node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js dist/bundle/wc",
-    "lint": "tslint -c ../../config/tslint.json 'src/**/*.ts'",
+    "lint": "tslint -c ../../tslint.json 'src/**/*.ts'",
     "prepack": "shx rm -rf *.tgz && npm run build",
     "postpack": "cpx *.tgz ../../artifacts",
     "rollup": "rollup -c",
@@ -40,10 +41,7 @@
     "setVersion": "gulp setVersion",
     "setLicense": "gulp setLicense",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "tsc": "tsc",
-    "tsc:watch": "tsc --watch --project ./tsconfig.dev.json",
-    "watch": "npm-run-all -p sass:watch tsc:watch"
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@microsoft/microsoft-graph-client": "^2.0.0",
@@ -73,6 +71,7 @@
     "rollup-plugin-postcss": "^2.5.0",
     "rollup-plugin-terser": "^5.2.0",
     "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-includepaths": "^0.2.3",
     "shx": "^0.3.2",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",

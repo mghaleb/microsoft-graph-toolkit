@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "paths": {
+      "@microsoft/mgt-element": ["../mgt-element/src"],
+      "@microsoft/mgt": ["../mgt/src"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
+  "references": [{ "path": "../mgt-element" }, { "path": "../mgt" }]
+}

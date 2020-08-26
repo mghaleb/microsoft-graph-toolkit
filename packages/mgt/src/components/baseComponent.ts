@@ -5,7 +5,7 @@
  * -------------------------------------------------------------------------------------------
  */
 
-import { LitElement, property, PropertyValues } from 'lit-element';
+import { LitElement, PropertyValues } from 'lit-element';
 import { Providers } from '../Providers';
 
 /**
